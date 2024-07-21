@@ -16,11 +16,12 @@ class EmployeeResource extends JsonResource
     {
         return
         [
-            "Employee code"=> $this->employee_id,
-            "Employee name"=> $this->first_name,
-            "Employee email"=> $this->email,
-            "Employee salary"=> $this->salary,
-            "Employee department"=> $this->department->department_name,
+            "Employee Code"=> $this->employee_id,
+            "Employee First Name"=> $this->first_name,
+            "Employee Last Name"=> $this->last_name,
+            "Employee Email"=> $this->email,
+            "Employee Salary"=> $this->salary,
+            "Employee Department"=> $this->department->department_name,
         ];
     }
 }

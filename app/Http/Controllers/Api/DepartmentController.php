@@ -16,7 +16,7 @@ class DepartmentController extends Controller
             ->firstOrFail();
         }catch(\Exception $e)
         {
-            return ApiResource::getResponse( '404',   $e->getMessage() , null ,[] );
+            return ApiResource::getResponse( '404',   $e->getMessage() , null  );
 
         }
 
@@ -31,5 +31,22 @@ class DepartmentController extends Controller
         $departments = \App\Models\Department::with(['manager'])->get();
 
         return ApiResource::getResponse( 200 , 'all data ok' , DepartmentResource::collection($departments) );
+    }
+
+
+    public function getQueryData(Request $request)
+    {
+        try{
+            $departments = \App\Models\Department::with(['manager'])->where('department_id',$request->id)->firstOrFail();
+        }catch(\Exception $e)
+        {
+            return ApiResource::getResponse( '404',   $e->getMessage() , [] );
+
+        }
+
+        return ApiResource::getResponse( '200',  ' Date success' , new DepartmentResource($departments));
+
+
+
     }
 }

@@ -10,6 +10,8 @@ class Region extends Model
     use HasFactory;
 
 
+
+    
     protected $primaryKey = 'region_id';
 
 

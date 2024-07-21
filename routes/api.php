@@ -33,6 +33,7 @@ Route::get('/department', [DepartmentController::class , 'getQueryData']);
 Route::post('/send/data',MassageController::class);
 Route::get('/region/data',[RegionController::class,'index']);
 
+
 Route::controller(AuthController::class)->group(function(){
     Route::post('new/register','register');
     Route::post('logout','logout')->middleware('auth:sanctum');

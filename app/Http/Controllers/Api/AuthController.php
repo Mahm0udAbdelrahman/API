@@ -85,7 +85,9 @@ class AuthController extends Controller
             $data['email'] = $user->email;
             $data['token'] = $user->createToken($request->token_name)->plainTextToken;
             return ApiResource::getResponse(200,'1000 1000 الدنيا تمام التمام' ,$data);
-        }else{
+        }
+        else
+        {
             $old['email'] = $request->email;
             $old['password'] = $request->password;
 

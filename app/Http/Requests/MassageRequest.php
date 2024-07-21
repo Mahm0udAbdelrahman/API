@@ -34,8 +34,10 @@ class MassageRequest extends FormRequest
 
     public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
     {
+        
         $response = ApiResource::getResponse(422,'Validation Errors',$validator->errors());
         // $response = ApiResource::getResponse(422,'Validation Errors',$validator->messages()->all());
         throw new ValidationException($validator, $response);
+
     }
 }

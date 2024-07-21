@@ -11,7 +11,8 @@ class DepartmentController extends Controller
 {
     public function getSingleDepartmentDate($id)
     {
-        try{
+        try
+        {
             $department = \App\Models\Department::where('department_id', $id)
             ->firstOrFail();
         }catch(\Exception $e)
@@ -36,7 +37,8 @@ class DepartmentController extends Controller
 
     public function getQueryData(Request $request)
     {
-        try{
+        try
+        {
             $departments = \App\Models\Department::with(['manager'])->where('department_id',$request->id)->firstOrFail();
         }catch(\Exception $e)
         {

@@ -60,7 +60,9 @@ class CountryController extends Controller
             }
 
             return ApiResource::getResponse(201, 'all data', $customDate);
-        } else {
+        }
+        else
+        {
             return ApiResource::getResponse(401, 'no data', []);
         }
 

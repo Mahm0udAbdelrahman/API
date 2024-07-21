@@ -31,7 +31,8 @@ class RegionController extends Controller
                     ]
 
                 ];
-            }else{
+            }else
+            {
                 // if(count($data)== 3 ||  $data->total()==$data->perPage())
                 // {
                 //     $customDate = new RegionResource($data);
@@ -40,7 +41,9 @@ class RegionController extends Controller
                 $customDate = RegionResource::collection($data);
             }
             return ApiResource::getResponse(201, 'Data' , $customDate);
-        }else{
+        }
+        else
+        {
             return ApiResource::getResponse(401,'No Data' , null);
         }
     }

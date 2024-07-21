@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->text('msg')->nullable();
             $table->timestamps();
+
+            
         });
     }
 

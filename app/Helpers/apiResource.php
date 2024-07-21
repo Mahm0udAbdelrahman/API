@@ -12,6 +12,7 @@ class ApiResource
             "massage"=> $msg,
             "data"=> $data,
         ];
+
             return response()->json($response , $code);
 
     }
